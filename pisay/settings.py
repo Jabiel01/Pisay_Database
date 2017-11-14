@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nc4h4aq@@+y2kg!wkhf*yrg1k!rbvkji%^j!n3spcr^aj89mw4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Local Apps
+    'Students',
 ]
 
 MIDDLEWARE = [
@@ -54,9 +58,10 @@ ROOT_URLCONF = 'pisay.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug' : True,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -105,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -118,3 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend', 'static'),
+)
+
+MEDIA_URL  = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+try:
+    from pisay.local_settings import *
+except ImportError:
+    pass
