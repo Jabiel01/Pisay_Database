@@ -1,6 +1,6 @@
 from django import forms
 
-from Students.models import Student
+from person_profiling.models import Student, Teacher
 
 class StudentForm(forms.ModelForm):
 	
@@ -8,3 +8,9 @@ class StudentForm(forms.ModelForm):
 		model = Student
 		fields = ('__all__')
 		# fields = ('first_name', 'last_name')
+
+class TeacherForm(forms.ModelForm):
+	
+	class Meta:
+		model = Teacher
+		fields = ('__all__')

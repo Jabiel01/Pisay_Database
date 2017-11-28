@@ -4,8 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import View
 
-from Students.forms import StudentForm
-from Students.models import Student
+from person_profiling.forms import StudentForm
+from person_profiling.models import Student
 
 
 class StudentView(View):
