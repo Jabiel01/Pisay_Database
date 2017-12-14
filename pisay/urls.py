@@ -21,5 +21,5 @@ from person_profiling import urls as person_profiling_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^student/', include(person_profiling_urls, namespace='person_profiling')),
+    url(r'^ID/', include(person_profiling_urls, namespace='person')),
 ]

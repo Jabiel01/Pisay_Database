@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+    {% block titleIN %}
+ <!--     {% if message %}
+        <h2>{{ message }}</h2>
+      {% else %}-->
+        <h2>INFRACTIONS</h2>
+      {% endif %}
+    {% endblock titleIN %}
+    {% block content %}
+    <div id="buttons"> 
+      {% if attend %}
+      <div id='result'>
+        <h3>Name: {{ infractions }}</h3>
+        <h3>{{ message }}/h3>
+      </div>
+      {% else %}
+        <h3>No Results Found</h3>
+      {% endif %}
+    </div>
+    <div id="attend_in">
+
+      <form class="form-signin" method="POST" action="{% url 'person:infractions' %}">
+        {% csrf_token %}
+        <div class="col-md-12">
+          <div class="col-md-12">
+            <input type="text" name="ID-number" placeholder="Student ID Number" class="form-control" placeholder="Enter Name of Item">
+          </div>
+          <div class = "col-md-12">
+            {{ studentinfractions.get_infractions_display }}
+          </div>
+          <div class="col-md-12" style="margin-top: 10px;">
+          <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  {% endblock content %}

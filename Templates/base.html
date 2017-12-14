@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title>{%block pagetitle %}{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+  </head>
+
+  <body style="background-color: #7EE3F5">
+
+    <div class="container-fluid" id="bar">
+
+      <!-- Navigation -->
+
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="barr">
+
+        <div class="container">
+
+          <div class="navbar-header"> 
+            <a class="navbar-brand" style='padding: 10px;' href="http://127.0.0.1:8000/"><img src="{% static 'frontend/logo.jpg' %}" width="30px" style="height: 100%; width: auto; border-radius: 100px;"></a>
+            <a class="navbar-brand" id="navvy" href="http://127.0.0.1:8000/">PISAY</a>
+          </div>
+
+          <!-- Change href/urls -->
+
+
+      </nav>
+
+      <!-- Body (boody) -->
+
+        <div class="container-fluid">
+
+          <ul class="nav nav-tabs">
+
+            <li><a href="#" id="navvy">{{title}}</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="container" id="boody">
+          <div class="panel panel-primary" id="content">
+       
+             <div class="panel-heading" id="title">
+              <h2>{{title}}
+                {% block titleIN %}
+                {% endblock %}
+              </h2>
+
+            </div>
+
+              <div class="panel-body" id="text">
+                {% block content %}
+                {% endblock%}
+              </div>
+
+            <ul class="nav nav-tabs">
+
+          </div>
+        <div class="container" id="page">
+          {% block body %}{% endblock %}
+        </div>
+
+      </div>
+
+      <!-- Footer Section -->
+      <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="barr">
+
+      <div class="container-fluid" id="foot">
+
+        <div class="row">
+
+          <div class="col-xs-12 text-center" id="footext">
+            <p id="footext">&#169; PISAY 2017</p>          
+          </div>
+        
+        </div>
+      </nav>
+      
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
