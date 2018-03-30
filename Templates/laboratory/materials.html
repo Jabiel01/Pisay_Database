@@ -1,0 +1,25 @@
+{% extends 'static/base.html' %}
+{% load django_tables2 %}
+  {% block titleIN %}
+    <h2>Laboratory</h2>
+  {% endblock titleIN %}
+
+  {% block content %}
+   
+    {% load static %}
+
+    <div id = "attend_in">
+      <div class = "col-md-12">
+        <div class = "col-md-12">
+          {% if materials %}
+            {% render_table materials %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+
+
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}

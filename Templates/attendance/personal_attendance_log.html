@@ -1,0 +1,64 @@
+{% extends 'static/base.html' %}
+{% load django_tables2 %}
+  {% block titleIN %}
+    <h2>Attendance</h2>
+  {% endblock titleIN %}
+
+  {% block content %}
+   
+    {% load static %}
+
+    {% if user_exists %}
+      {{ user_exists }}
+    {% endif %}
+
+    <div id="buttons">
+      <div id="result">
+        <h4>Personal User Log</h4>
+      </div>
+    </div>
+
+    <div id = "attend_in">
+      <form class = "form-signin" method = "POST">
+        {% csrf_token %}
+        <div class = "col-md-12">
+          <div class = "col-md-12">
+            <input type = "text" name = "ID-number" placeholder = "Enter ID-number" class = "form-control">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    {% if cutting_class_log %}
+      <h4>Cutting Class</h4>
+      {% render_table cutting_class_log %}
+      <br>
+    {% endif %}
+
+
+    {% if tardy_log %}
+      <h4>Tardy</h4>
+      {% render_table tardy_log %}
+      <br>
+    {% endif %}
+
+    {% if absent_log %}
+      <h4>Absent</h4>
+      {% render_table absent_log%}
+      <br>
+    {% endif %}
+
+    {% if personal_attendance_log %}
+        <h4>Daily PERSONAL ATTENDANCE LOG </h4>
+        {% render_table personal_attendance_log %}
+    {% endif %}
+
+    <br>
+
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}

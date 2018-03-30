@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PISAY Webpage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="../CS Homepage.html">PISAY Webpage</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a href="About.html">About</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="attendance.html">Time In/Time Out</a></li>
+            <li><a href="infractions.html">Infractions</a></li>
+            <li><a href="personal_attendance_log.html">Personal Attendance Log</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Library <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="borrow_book.html">Borrowing</a></li>
+            <li><a href="personal_library_card.html">Personal Library Card</a></li>
+            <li><a href="search_book.html">Search Book</a></li>
+          </ul>
+        </li>
+        <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Canteen<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="balance.html">Balance</a></li>
+            <li><a href="consumable_list.html">Consummable List</a></li>
+            <li><a href="reload.html">Reload</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Laboratory<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="materials.html">Borrow Lab Materials</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+   <div class="jumbotron text-center">
+    <h1>Balance</h1>
+    <p>Go ahead and enter your ID Number below to check your balance.</p> 
+  </div>
+
+  <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="idnum">ID Number:</label>
+      <div class="col-sm-9">
+        <input type="idnum" class="form-control" id="idnum" placeholder="Enter ID Number" name="idnum">
+      </div>
+    </div>
+  </form>
+
+</body>
+</html>
+

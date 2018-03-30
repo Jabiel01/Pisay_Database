@@ -1,0 +1,68 @@
+{% extends 'static/base.html' %}
+    
+  {% block titleIN %}
+    <h2>Library</h2>
+  {% endblock titleIN %}
+
+  {% block content %}
+
+   
+    {% load static %}
+    <div id = "buttons"> 
+      <div id="result">
+        <h4>Borrow Books<h4>
+      </div>
+      {% if user_exists %}
+      <div id = 'result'>
+        <h5>Name: {{ user_exists }}</h5>
+      </div>
+      {% else %}
+        <h5>No Results Found</h5>
+      {% endif %}
+
+    </div>
+
+    <div id = "attend_in">
+      <form class = "form-signin" method = "POST" name = "borrow">
+        {% csrf_token %}
+        <div class = "col-md-12">
+          <div class = "col-md-12">
+            <input type = "text" name = "ID-number" placeholder = "Enter ID Number" class = "form-control">
+
+            <br>
+
+            <input type = "text" name = "book-number" placeholder = "Enter Book number" class = "form-control">
+           
+            <br>
+
+            <button type="submit" name="borrow_btn" class="save btn btn-default">Borrow</button>
+
+            <br><br><br>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+
+    {% if book %}
+      <h5>{{ book }} has been borrowed</h5>
+    {% endif %}
+
+
+    <h4>Return Books</h4>
+    <div id="attend_in">
+      <form class = "form-signin" method = "POST" name = "return">
+        {% csrf_token %}
+        <div class = "col-md-12">
+          <div class = "col-md-12">
+            <input type = "text" name = "book-number-return" placeholder = "Enter Book Number" class = "form-control">
+            {% block returnbook %}
+              {{ returned }}
+            {% endblock returnbook %}
+          </div>
+        </div>
+      </form>
+    </div>
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}

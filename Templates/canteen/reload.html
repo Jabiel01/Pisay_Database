@@ -1,0 +1,54 @@
+{% extends 'static/base.html' %}
+    
+    {% block titleIN %}
+        <h2>Canteen</h2>
+    {% endblock titleIN %}
+
+    {% block content %}
+    <div id="buttons"> 
+      {% if user_exists %}
+      <div id='result'>
+        <h4>Name: {{ user_exists }}</h4>
+      </div>
+      {% else %}
+        <div id="result">
+          <h4>Reload Balance</h4>
+        </div>
+      {% endif %}
+    </div>
+    <div id="attend_in">
+
+      <form class="form-signin" method="POST">
+        {% csrf_token %}
+        <div class="col-md-12">
+          <div class="col-md-12">
+            <input type="text" name="ID-number" placeholder="Enter ID Number" class="form-control">
+          </div>
+          
+          <br><br>
+        
+          <div class="col-md-12">
+            <input type="text" name="load" placeholder="Enter amount to load" class="form-control">
+          </div>
+
+          <br><br><br>
+          
+          <div id = "buttons">
+            <button type="submit" class="save btn btn-default">Save</button>
+          </div>
+          {% block balance %}
+            {% if balance and load %}
+              <div class="col-md-12" style="margin-top: 10px;">{{ load }} has been successfully credited to your account.
+              </div>
+              <div class="col-md-12" style="margin-top: 10px;">Current Balance: {{ balance }}
+              </div>
+            {% endif %}
+          {% endblock balance %}
+        </div>
+      </form>
+
+    </div>
+
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}

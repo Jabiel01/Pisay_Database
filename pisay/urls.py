@@ -16,10 +16,19 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from laboratory import urls as laboratory_urls
+from library import urls as library_urls
 from person_profiling import urls as person_profiling_urls
-
+from canteen import urls as canteen_urls
+from pisay.views import homeview, aboutview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^ID/', include(person_profiling_urls, namespace='person')),
+    url(r'^attendance/', include(person_profiling_urls, namespace='person')),
+    url(r'^canteen/', include(canteen_urls, namespace = 'canteen')),
+    url(r'^laboratory/', include(laboratory_urls, namespace='laboratory')),
+    url(r'^library/', include(library_urls, namespace='library')),
+    url(r'^home/$', homeview, name = "home"),
+    url(r'^about/$', aboutview, name = "about"),
+
 ]

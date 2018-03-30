@@ -1,0 +1,56 @@
+{% extends 'static/base.html' %}
+    
+  {% block titleIN %}
+    <h2>INFRACTIONS</h2>
+  {% endblock titleIN %}
+
+
+   
+    {% load static %}
+      <link rel = "stylesheet" type="text/css" href="/media/admin/css/forms.css">
+      <link rel = "stylesheet" type="text/css" href="/media/admin/css/base.css">
+      <link rel = "stylesheet" type="text/css" href="/media/admin/css/global.css">
+      <link rel = "stylesheet" type="text/css" href="/media/admin/css/widgets.css">
+
+       <script type = "text/javascript" src="/admin/jsi18n/"></script>
+      <script type = "text/javascript" src="/media/admin/js/core.js"></script>
+
+  {% block content %}
+    {{ message }}
+      <div id="attend_in">
+        {% block infractionsForm %}
+          <form enctype="multipart/form-data" method="POST" class="post-form" name = "infraction_POST">
+            {% csrf_token %}
+         <!--<div class = "col-md-12">
+            
+              <input type = "text" name = "reason" placeholder = "Enter reason" class = "form-control">
+            </div>
+          </div>-->
+            <div class = "col-md-12">
+            <input type = "text" name = "ID-number" placeholder = "Enter ID-number" class = "form-control">
+            
+            <br>
+              {{ form.as_p }}
+            <br>
+          
+            <button type="submit" class="save btn btn-default">Save</button>
+            <br>
+          
+          </form>
+        {% endblock infractionsForm %}
+      </div>
+  {% endblock content %}
+  {%block section%}
+  {% endblock section%}
+        {% block columns %}
+      <div id = "buttons"> 
+        {% if attend %}
+        <div id = 'result'>
+          <h3>Name: {{ attend }}</h3>
+        </div>
+        {% else %}
+          <h3>No Results Found</h3>
+        {% endif %}
+      </div>
+    {% endblock columns%}
+    {{ message }}

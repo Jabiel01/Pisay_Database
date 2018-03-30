@@ -1,0 +1,30 @@
+{% extends 'static/base.html' %}
+{% load django_tables2 %}
+  {% block titleIN %}
+    <h2>Library</h2>
+  {% endblock titleIN %}
+
+  {% block content %}
+   
+    {% load static %}
+    <h4>Search books</h4>
+    <div id = "attend_in">
+      <form class = "form-signin" method = "POST">
+        {% csrf_token %}
+        <div class = "col-md-12">
+          <div class = "col-md-12">
+            <input type = "text" name = "book" placeholder = "Search book title/number/author" class = "form-control">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    {% if book_table %}
+        {% render_table book_table %}
+    {% endif %}
+
+
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}

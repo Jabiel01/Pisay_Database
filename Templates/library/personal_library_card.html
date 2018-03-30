@@ -1,0 +1,35 @@
+{% extends 'static/base.html' %}
+{% load django_tables2 %}
+    
+  {% block titleIN %}
+    <h2>Library</h2>
+  {% endblock titleIN %}
+
+  {% block content %}
+    {{ message }}
+
+   
+    {% load static %}
+
+    <h4>View Book Card History</h4>
+    <div id="attend_in">
+      <form class = "form-signin" method = "POST" name = "library_card">
+        {% csrf_token %}
+        <div class = "col-md-12">
+          <div class = "col-md-12">
+            <input type = "text" name = "ID-number" placeholder = "Enter ID Number" class = "form-control">
+              {% if user_exists %}
+                <h5>User: {{ user_exists }}</h5>
+              {% endif%}
+            {% block returnbook %}
+              {% if borrowed_log %}
+                {% render_table borrowed_log %}
+              {% endif %}
+            {% endblock returnbook %}
+          </div>
+        </div>
+      </form>
+    </div>
+  {% endblock content %}
+  {% block section %}
+  {% endblock section %}
