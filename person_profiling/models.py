@@ -2,9 +2,15 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 import django_tables2 as tables
 
 sections = (
+			('0', 'None'),
 			('1', '7-Diamond'),
 			('2', '7-Gold'),
 			('3', '7-Pearl'),
@@ -28,6 +34,11 @@ sections = (
 			('21', '12-Pascal'),
 			('22', '12-Tesla'),
 	)
+clubs = (
+			('1', 'ICONS'),
+			('2', 'SCI-WINGS'),
+			('3', 'None'),
+	)
 
 infractions = (
 		('CC', 'Cutting Class'),
@@ -38,15 +49,22 @@ infractions = (
 
 
 class Student(models.Model):
-	first_name = models.CharField(max_length = 100)
-	middle_name = models.CharField(max_length = 50)
-	last_name = models.CharField(max_length = 50)
-	student_number = models.IntegerField()
-	section = models.CharField(max_length = 13, choices = sections, default = None)
-	balance = models.IntegerField(blank = 0)
+	user = models.OneToOneField(User)
+	first_name = models.CharField(max_length = 100, null = True, blank = True)
+	middle_name = models.CharField(max_length = 50, null = True, blank = True)
+	last_name = models.CharField(max_length = 50, null = True, blank = True)
+	student_number = models.IntegerField(null = True, blank = True)
+	section = models.CharField(max_length = 13, choices = sections, null = True, default = None)
+	club = models.CharField(max_length = 13, choices = clubs, null = True, default = None)
+	balance = models.IntegerField(null = True, blank = 0)
 
 	def __unicode__(self):
 		return"{} {}".format(self.first_name, self.last_name)
+
+	@receiver(post_save, sender=User)
+	def update_user_profile(sender, instance, created=False, **kwargs):
+	    if created:
+	        Student.objects.get_or_create(user=instance)
 
 
 class StudentAttendance(models.Model):
@@ -98,16 +116,22 @@ class StudentInfractionsTable(tables.Table):
 
 
 class Teacher(models.Model):
-	first_name = models.CharField(max_length = 100)
-	middle_name = models.CharField(max_length = 50)
-	last_name = models.CharField(max_length = 50)
-	teacher_number = models.IntegerField()
+	user = models.OneToOneField(User)
+	first_name = models.CharField(max_length = 100, null = True, blank = True)
+	middle_name = models.CharField(max_length = 50, null = True, blank = True)
+	last_name = models.CharField(max_length = 50, null = True, blank = True)
+	teacher_number = models.IntegerField(null = True, blank = True)
 	advisory = models.CharField(max_length = 13, choices = sections, null = '')
-	balance = models.IntegerField(blank = 0)
+	club = models.CharField(max_length = 13, choices = clubs, null = True, default = None)
+	balance = models.IntegerField(null = True, blank = 0)
 
 	def __unicode__(self):
 		return"{} {}".format(self.first_name, self.last_name)
 
+	@receiver(post_save, sender=User)
+	def update_user_profile(sender, instance, created=False, **kwargs):
+	    if created:
+	        Teacher.objects.get_or_create(user=instance)
 
 class TeacherAttendance(models.Model):
 	teacher = models.ForeignKey(Teacher)

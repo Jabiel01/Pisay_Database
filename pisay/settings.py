@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'laboratory',
     'library',
     'person_profiling',
+    'user_account',
 ]
 
 MIDDLEWARE = [

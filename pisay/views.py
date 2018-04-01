@@ -1,6 +1,6 @@
 from django.core import urlresolvers
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 
 

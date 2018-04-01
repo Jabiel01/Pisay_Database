@@ -52,6 +52,12 @@
             <li><a href="{% url 'laboratory:material' %}">Borrow Lab Materials</a></li>
           </ul>
         </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'new_user:Student' %}">Create New User<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'new_user:Student' %}">Create Student</a></li>
+            <li><a href="{% url 'new_user:Teacher' %}">Create Teacher</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>

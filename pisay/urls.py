@@ -20,15 +20,18 @@ from laboratory import urls as laboratory_urls
 from library import urls as library_urls
 from person_profiling import urls as person_profiling_urls
 from canteen import urls as canteen_urls
+from user_account import urls as user_account_urls
+
 from pisay.views import homeview, aboutview
 
+
 urlpatterns = [
+    url(r'^about/$', aboutview, name = "about"),
     url(r'^admin/', admin.site.urls),
     url(r'^attendance/', include(person_profiling_urls, namespace='person')),
     url(r'^canteen/', include(canteen_urls, namespace = 'canteen')),
+    url(r'^home/$', homeview, name = "home"),
     url(r'^laboratory/', include(laboratory_urls, namespace='laboratory')),
     url(r'^library/', include(library_urls, namespace='library')),
-    url(r'^home/$', homeview, name = "home"),
-    url(r'^about/$', aboutview, name = "about"),
-
+    url(r'^new_user/', include(user_account_urls, namespace = 'new_user')),
 ]
