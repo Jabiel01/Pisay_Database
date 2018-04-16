@@ -1,0 +1,33 @@
+{% extends 'static/base.html' %}
+{% block content %}
+<h1 style="font-family:Futura; color:#00005C"><b>ENTER YOUR STUDENT NUMBER:</b></h1>
+
+<form action="/canteen/enter_new_main/" method="POST">
+	{% csrf_token %}
+
+<center>
+<h1 style="font-family:Futura; color:#00005C">
+
+<header>
+<b>Rice: &nbsp;&nbsp;</b> <input type="number" value=0 name="rice">
+</header>
+
+<header>
+<b>Viand:&nbsp;&nbsp;</b><input type="number" value=0 name="viand"> 
+</header>
+
+<header>
+<b>Meal: &nbsp;&nbsp;</b> <input type="number" value=1 name="meal">
+</header>
+</h1>
+
+
+<button type="submit" class="btn btn-info"><h1>&nbsp;Place Order&nbsp;</h1></button>
+</center>
+
+<input type="hidden" name='sid' value='{{ sid }}'>
+</form>
+{% endblock %}
+
+{% block section %}
+{% endblock section %}

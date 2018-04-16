@@ -4,8 +4,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 
 
-def homeview(request):
-	return render(request, 'static/base.html')
-
 def aboutview(request):
-	return render(request, 'static/pages/About.html')
+	return render(request, 'static/stock/about.html')
+
+def admissionview(request):
+	return render(request, 'static/stock/admission.html')
+
+def homeview(request):
+	return render(request, 'static/stock/home.html')
+

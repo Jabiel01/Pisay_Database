@@ -1,0 +1,120 @@
+{% extends 'static/base.html' %}
+{% load static %}
+	{% block tabheader %}
+		<title>PSHSSMC: About Us</title>
+	{% endblock tabheader %}
+	
+	{% block navabout %}
+		<li class="active">
+			<a href="{% url 'about' %}">About Us</a>
+
+		</li>
+	{% endblock navabout %}
+	{% block title %}
+		<header id="gtco-header" class="gtco-cover gtco-cover-xs" role="banner" style="background-image:url({% static 'images/campus_4.jpg' %});">
+			<div class="overlay"></div>
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<div class="display-t">
+							<div class="display-tc">
+								<h1 class="animate-box" data-animate-effect="fadeInUp">About Us</h1>
+								<h2 class="animate-box" data-animate-effect="fadeInUp">Established under Republic Act 3661 otherwise known as the PSHS Charter</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	{% endblock title %}
+	{% block content %}
+		<div id="gtco-features" class="gtco-section border-bottom animate-box">
+			<div class="gtco-container">
+					
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center gtco-heading">
+						<h2>Mission</h2>
+						<p>The Philippine Science High School, operating under one System of Governance and Management, provides scholarships to students with high aptitude in science and mathematics.
+						</br></br>
+						The PSHS System offers an education that is humanistic in spirit, global in perspective and patriotic in orientation. It is based on a curriculum that emphasizes science and mathematics and the development of well-rounded individuals. 
+						</br></br>
+						The PSHS System prepares its students for careers in Science and Technology and contributes to nation building by helping the country attain a critical mass of professionals and leaders in Science and Technology.</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	{% endblock content %}
+
+	{% block content2 %}
+	{% endblock content2 %}
+
+	{% block content3 %}
+		<div id="gtco-portfolio" class="gtco-section">
+	      	<div class="gtco-container">
+	        
+	        	<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center gtco-heading">
+						<h2>Vision</h2>
+						<p>We are the leading science high school in the Asia Pacific region preparing our scholars to become globally-competitive Filipino scientists equipped with 21st century skills and imbued with the core values of truth, excellence, and service to nation.</p>
+					</div>
+				</div>
+
+	     	</div>
+	    </div>
+
+		<footer id="gtco-footer" role="contentinfo">
+	  <div class="gtco-container">
+		<div class="row row-p b-md">
+
+		  <div class="col-md-4">
+			<div class="gtco-widget">
+			  <h3>About Us</h3>
+			  <p>PSHS-SMC is the first regional campus of the PSHS System, a specialized public high school in the Philippines. It caters to scientifically and mathematically gifted high school students from all over the country especially those in Mindanao. It is located in Barangay Sto. Niño, Tugbok District, Mintal, Davao City.</p>
+			</div>
+		  </div>
+
+		  <div class="col-md-4 col-md-push-1">
+			<div class="gtco-widget">
+			  <h3>Links</h3>
+			  <ul class="gtco-footer-links">
+				<li><a href="https://www.gov.ph/">Government PH</a></li>
+				<li><a href="http://smc.pshs.edu.ph/pshs.edu.ph">PSHS Website</a></li>
+				<li><a href="http://smc.pshs.edu.ph/">PSHSSMC Website</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Philippine_Science_High_School_Southern_Mindanao_Campus">PSHSSMC Wikipedia</a></li>
+				<li><a href="https://www.edmodo.com">Edmodo</a></li>
+			  </ul>
+			</div>
+		  </div>
+
+		  <div class="col-md-4">
+			<div class="gtco-widget">
+			  <h3>Get In Touch</h3>
+			  <ul class="gtco-quick-contact">
+				<li><a href="#"><i class="icon-mail2"></i> pshs.smc@gmail.com</a></li> <!--add PSHS email-->
+				<li><a href="https://www.facebook.com/PisaySMC/"><i class="ti-facebook"></i> /PisaySMC/</a></li>
+				<li><a href="#"><i class="ti-twitter-alt"></i> /PisaySMC/</a></li> <!--add twitter-->
+			  </ul>
+			</div>
+		  </div>
+
+		</div>
+
+		<div class="row copyright">
+		  <div class="col-md-12">
+			<p class="pull-left">
+			  <small class="block">&copy; 2018 PSHSSMC Website. All Rights Reserved.</small> 
+			</p>
+			<p class="pull-right">
+			  <ul class="gtco-social-icons pull-right">
+				
+			  </ul>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+	</footer>
+	{% endblock content3 %}
+
+

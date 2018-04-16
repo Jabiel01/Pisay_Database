@@ -22,12 +22,13 @@ from person_profiling import urls as person_profiling_urls
 from canteen import urls as canteen_urls
 from user_account import urls as user_account_urls
 
-from pisay.views import homeview, aboutview
+from pisay.views import homeview, aboutview, admissionview
 
 
 urlpatterns = [
     url(r'^about/$', aboutview, name = "about"),
     url(r'^admin/', admin.site.urls),
+    url(r'^admission/', admissionview, name="admission"),
     url(r'^attendance/', include(person_profiling_urls, namespace='person')),
     url(r'^canteen/', include(canteen_urls, namespace = 'canteen')),
     url(r'^home/$', homeview, name = "home"),

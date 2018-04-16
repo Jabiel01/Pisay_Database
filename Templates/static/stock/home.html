@@ -1,0 +1,227 @@
+{% extends 'static/base.html' %}
+{% load static %}
+	{% block tabheader %}
+		<title>PSHSSMC</title>
+	{% endblock tabheader %}
+	
+	{% block navhome %}
+		<li class="active">
+			<a href="{% url 'home' %}">Home</a>
+		</li>
+	{% endblock navhome %}
+
+	{% block title %}
+		<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url({% static 'images/campus_3.jpg' %});">
+		  <div class="overlay"></div>
+		  <div class="gtco-container">
+			<div class="row">
+			  <div class="col-md-12 col-md-offset-0 text-left">
+				<div class="display-t">
+				  <div class="display-tc">
+					<h1 class="animate-box" data-animate-effect="fadeInUp">Philippine Science High School</h1>
+					<h2 class="animate-box" data-animate-effect="fadeInUp">Southern Mindanao Campus</h2>
+					<p class="animate-box" data-animate-effect="fadeInUp"><a href="#" class="btn btn-white btn-lg btn-outline">Log In</a></p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</header>
+	{% endblock title %}
+	{% block content %}
+		<div id="gtco-features-3">
+		  <div class="gtco-container">
+			<div class="gtco-flex">
+			  <div class="feature feature-1 animate-box" data-animate-effect="fadeInUp">
+				<div class="feature-inner">
+				  <span class="icon">
+					<i class="ti-cup"></i>
+				  </span>
+				  <h3>Achievements</h3>
+				  <p>Accomplishments of the School and the PSHSSMC Scholars. </p>
+				  <p><a href="{% url 'home' %}" class="btn btn-white btn-outline">Learn More</a></p>
+				</div>
+			  </div>
+			  <div class="feature feature-2 animate-box" data-animate-effect="fadeInUp">
+				<div class="feature-inner">
+				  <span class="icon">
+					<i class="ti-announcement"></i>
+				  </span>
+				  <h3>Announcement</h3>
+				  <p>Official PSHSSMC public announcements for the community. </p>
+				  <p><a href="{% url 'home' %}" class="btn btn-white btn-outline">Learn More</a></p>
+				</div>
+			  </div>
+			  <div class="feature feature-3 animate-box" data-animate-effect="fadeInUp">
+				<div class="feature-inner">
+				  <span class="icon">
+					<i class="ti-calendar"></i>
+				  </span>
+				  <h3>Calendar of Activities</h3>
+				  <p>For a list of the school's activities and events including public holidays. </p>
+				  <p><a href="#" class="btn btn-white btn-outline">Learn More</a></p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	{% endblock content %}
+
+	{% block content2 %}
+		<div id="gtco-features">
+		  <div class="gtco-container">
+			
+			<div class="row">
+			  <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+				<h2>Announcement</h2>
+			  </div>
+			</div>
+			
+			<div class="row row-pb-md">
+			  <div class="col-md-12">
+				<ul id="gtco-portfolio-list">
+				  <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_10.jpg' %}); "> 
+					<a href="#" class="color-1">
+					  <div class="case-studies-summary">
+						<span>Academics</span>
+						<h2>SCALE is the Best</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_20.jpg' %}); ">
+					<a href="#" class="color-2">
+					  <div class="case-studies-summary">
+						<span>Sports</span>
+						<h2>Tapos na rin ang Intramurals</h2>
+					  </div>
+					</a>
+				  </li>
+
+
+				  <li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_30.jpg' %}); ">
+					<a href="#" class="color-3">
+					  <div class="case-studies-summary">
+						<span>Sports</span>
+						<h2>Scholars are training for the next Fun Run</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_40.jpg' %}); ">
+					<a href="#" class="color-4">
+					  <div class="case-studies-summary">
+						<span>Birthday</span>
+						<h2>Director's Birthday</h2>
+					  </div>
+					</a>
+				  </li>
+
+				  <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_50.jpg' %}); "> 
+					<a href="#" class="color-5">
+					  <div class="case-studies-summary">
+						<span>Others</span>
+						<h2>PSHSSMC is the Top PSHS Campus</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_60.jpg)' %}; ">
+					<a href="#" class="color-6">
+					  <div class="case-studies-summary">
+						<span>SCALE</span>
+						<h2>Grade 12 Students Showcase their New Skills</h2>
+					  </div>
+					</a>
+				  </li>
+				</ul>   
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-4 col-md-offset-4 text-center animate-box">
+				<a href="#" class="btn btn-info btn-black btn-outline btn-lg btn-block">View All Our Announcements</a>
+			  </div> <!--edit colors-->
+			</div>
+
+		  </div>
+		</div>
+	{% endblock content2 %}
+
+	{% block content3 %}
+		<div id="gtco-portfolio" class="gtco-section">
+		  <div class="gtco-container">
+			
+			<div class="row">
+			  <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+				<h2>Achievements</h2>
+			  </div>
+			</div>
+
+			<div class="row row-pb-md">
+			  <div class="col-md-12">
+				<ul id="gtco-portfolio-list">
+				  <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_11.jpg)' %}; "> 
+					<a href="#" class="color-1">
+					  <div class="case-studies-summary">
+						<span>Chemistry</span>
+						<h2>1st Place Chemistry Contest</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_21.jpg)' %}; ">
+					<a href="#" class="color-2">
+					  <div class="case-studies-summary">
+						<span>Biology</span>
+						<h2>3rd Place Group National Biology Contest</h2>
+					  </div>
+					</a>
+				  </li>
+
+
+				  <li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_31.jpg' %}); ">
+					<a href="#" class="color-3">
+					  <div class="case-studies-summary">
+						<span>Math</span>
+						<h2>PMO 1st</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_41.jpg' %}); ">
+					<a href="#" class="color-4">
+					  <div class="case-studies-summary">
+						<span>English</span>
+						<h2>3rd Place Journal Writing</h2>
+					  </div>
+					</a>
+				  </li>
+
+				  <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_51.jpg)' %}; "> 
+					<a href="#" class="color-5">
+					  <div class="case-studies-summary">
+						<span>Research</span>
+						<h2>MIYIO 2017 1st Placers</h2>
+					  </div>
+					</a>
+				  </li>
+				  <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/img_61.jpg' %}); ">
+					<a href="#" class="color-6">
+					  <div class="case-studies-summary">
+						<span>Research</span>
+						<h2>2nd Place UP Grains</h2>
+					  </div>
+					</a>
+				  </li>
+				</ul>   
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-4 col-md-offset-4 text-center animate-box">
+				<a href="#" class="btn btn-white btn-outline btn-lg btn-block">View All Our Achievements</a>
+			  </div>
+			</div>
+
+			
+		  </div>
+		</div>
+
+		<footer id="gtco-footer" role="contentinfo">
+	{% endblock content3 %}

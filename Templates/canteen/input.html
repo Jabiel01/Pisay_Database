@@ -1,0 +1,25 @@
+{% extends 'static/base.html' %}
+{% block content %}
+
+{% if messages %}
+   {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }} alert alert-success"{% endif %}>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<h1 style="font-family:Futura; color:#00005C"><b>ENTER YOUR STUDENT NUMBER:</b></h1>
+<form action="/canteen/ip_unit/" method="get">
+{% csrf_token %}
+<input type="text" name="sid">
+<input type="submit" value="Search">
+<br>
+
+
+</form>
+
+{% endblock %}
+
+
+
+{% block section %}
+{% endblock section %}
